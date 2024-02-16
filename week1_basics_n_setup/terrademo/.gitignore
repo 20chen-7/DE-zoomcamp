@@ -35,3 +35,4 @@ terraform.rc
 
 #ignore json file->security
 *.json
+*.DS_Store
