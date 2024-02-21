@@ -3,16 +3,17 @@
         materialized='table'
     )
 }}
-WITH
-fhv_data as (
-    select * from {{ ref('stg_fhv_tripdata') }}
+with fhv_data as (
+    select *,
+        'FHV' as service_type
+    from {{ ref('stg_fhv_tripdata') }}
 ),
 dim_zones as (
     select * from {{ ref('dim_zones')}}
     where borough != 'Unknown'
 )
-
 select
+    fhv_data.service_type,
     fhv_data.pickup_locationid, 
     pickup_zone.borough as pickup_borough, 
     pickup_zone.zone as pickup_zone, 
