@@ -1,0 +1,7 @@
+version: 2
+
+models:
+  - name: admission_rate
+    description: >
+      List of admission rate idefied by unitid. 
+      Includes the SAT score and admission rate).

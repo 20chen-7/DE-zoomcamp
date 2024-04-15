@@ -22,7 +22,7 @@ renamed as (
         main,
         numbranch,
         preddeg,
-        coalesce({{ dbt.safe_cast("preddeg", api.Column.translate_type("integer")) }},0) as pdegree_type_description,
+        coalesce({{ dbt.safe_cast("preddeg", api.Column.translate_type("integer")) }},0) as degree_type,
         {{get_degree_type_description('preddeg')}} as degree_type_description,
         highdeg,
         control,

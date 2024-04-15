@@ -37,4 +37,6 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   de_project:
+vars:
+  degree_type_values: [0, 1, 2, 3, 4]
 
