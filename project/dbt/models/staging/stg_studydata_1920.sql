@@ -1,9 +1,8 @@
-{{ config(materialized='view') }}
 with 
 
 studydata as (
 
-    select * from {{ source('staging', 'studydata_1819_1920') }}
+    select * from {{ source('staging', 'studydata_1920') }}
 
 ),
 
@@ -19,6 +18,8 @@ renamed as (
         cipdesc,
         credlev,
         creddesc,
+        ipedscount1,
+        ipedscount2,
         distance,
         __index_level_0__
 
@@ -27,3 +28,10 @@ renamed as (
 )
 
 select * from renamed
+
+-- dbt build --select <model_name> --vars '{'is_test_run': 'false'}'
+{% if var('is_test_run', default=true) %}
+
+  limit 100
+
+{% endif %}

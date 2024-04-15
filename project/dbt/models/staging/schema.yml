@@ -5,6 +5,7 @@ sources:
     database: de-bootcamp-final-project
     schema: college_data_all
     tables:
-      - name: studydata_1819_1920
       - name: merged_data_1920
+      - name: studydata_1920
+      
 
