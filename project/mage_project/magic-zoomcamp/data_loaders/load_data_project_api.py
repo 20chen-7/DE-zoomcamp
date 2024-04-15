@@ -19,6 +19,10 @@ def load_data_from_api(*args, **kwargs):
     response = requests.get(url)
     response.raise_for_status()
     zip_file_bytes = io.BytesIO(response.content)
+    
+    """
+    after obtaining the schema, we will paste it here
+    """
     college_dtypes = {
                         'UNITID': pd.Int64Dtype(),
                         'OPEID6': pd.Int64Dtype(),
@@ -139,6 +143,16 @@ def load_data_from_api(*args, **kwargs):
                         "DISTANCE": pd.Int64Dtype(),
                     }
     with zipfile.ZipFile(zip_file_bytes) as zip_file:
+        
+        """"
+        'data/FieldOfStudyData1415_1516_PP.csv'
+        'data/FieldOfStudyData1516_1617_PP.csv'
+        'data/FieldOfStudyData1617_1718_PP.csv'
+        'data/FieldOfStudyData1718_1819_PP.csv'
+        'data/FieldOfStudyData1819_1920_PP.csv', 
+        'data/MERGED2019_20_PP.csv'
+        """
+        
         desired_file_name = 'data/FieldOfStudyData1819_1920_PP.csv'
         with zip_file.open(desired_file_name) as file:
             df = pd.read_csv(file, dtype=college_dtypes)

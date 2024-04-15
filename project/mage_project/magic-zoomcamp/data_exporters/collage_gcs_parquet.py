@@ -22,6 +22,14 @@ def export_data_to_big_query(df: DataFrame, **kwargs) -> None:
     config_profile = 'default'
 
     bucket_name = 'college-scorecard-data-2024-04'
+    """
+        'college-studydata-1415-1516.parquet'
+        'college-studydata-1516-1617.parquet'
+        'college-studydata-1617-1718.parquet'
+        'college-studydata-1718-1819.parquet'
+        'college-studydata-1819-1920.parquet, 
+        'college-merged-1920.parquet'
+    """
     object_key = 'college-studydata-1819-1920.parquet'
 
     GoogleCloudStorage.with_config(ConfigFileLoader(config_path, config_profile)).export(

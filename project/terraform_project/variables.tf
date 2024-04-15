@@ -21,7 +21,7 @@ variable "project" {
 
 variable "bq_dataset_name" {
   description = "My BigQuery Dataset For Collage"
-  default     = "college_dataset"
+  default     = "college_data"
 }
 
 variable "gcs_bucket_name" {
