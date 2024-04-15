@@ -13,7 +13,7 @@
     index: tinyint
 #}
 
-{% macro get_payment_type_description(preddeg) -%}
+{% macro get_degree_type_description(preddeg) -%}
 
     case {{ dbt.safe_cast("preddeg", api.Column.translate_type("integer")) }}  
         when 0 then 'Not classified'
