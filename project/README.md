@@ -59,12 +59,12 @@ Simultaneously, the geo chart shows that the recordings in 2019, are distributed
 
 ```
 ├── requirement.txt
+├── dashboard_code
 ├── data_schema
 ├── dbt
 ├── gcp_datawarehouse
 ├── mage_project
 ├── image
-│ ├── dashboard_screenshot.png
 ├── terraform_project
 ├── dashboard_code
 └── ReadMe.md
@@ -150,7 +150,7 @@ terraform destroy
 7. move the mage directory
 ```sh
 cd ../mage_project
-```sh
+```
 8. Rename `dev.env` to `.env`.
 ```sh
 mv dev.env .env
