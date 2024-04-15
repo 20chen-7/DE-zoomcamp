@@ -1,0 +1,5 @@
+panda==1.4.4
+io
+requests
+zipfile
+sqlalchemy
